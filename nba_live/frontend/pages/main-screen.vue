@@ -9,13 +9,13 @@ import { ref, onMounted } from "vue";
 
 const gameIds = ref([]);
 const currentIndex = ref(0);
-const pages = ["http://91.90.195.32:3000/playoff", "http://91.90.195.32:3000", "http://91.90.195.32/quarter-stats"];
+const pages = ["https://bsh-navy.vercel.app/playoff", "https://bsh-navy.vercel.app", "https://bsh-navy.vercel.app/quarter-stats"];
 const currentUrl = ref(pages[0]); // Починаємо з загальної статистики
 
 // ✅ Функція отримання ID матчів тільки для активних ігор
 const fetchGameIds = async () => {
   try {
-    const response = await fetch("http://91.90.195.32:8000/api/todays_games/");
+    const response = await fetch("https://nba-backend-p2yt.onrender.com/api/todays_games/");
     if (!response.ok) throw new Error("Failed to fetch game data");
     const data = await response.json();
 
@@ -33,7 +33,7 @@ onMounted(async () => {
   await fetchGameIds();
 
   setInterval(() => {
-    const activeGames = gameIds.value.map(id => `http://91.90.195.32:3000/game/${id}`);
+    const activeGames = gameIds.value.map(id => `https://bsh-navy.vercel.app/game/${id}`);
     const rotationPages = [...pages, ...activeGames];
 
     if (rotationPages.length > 0) {
