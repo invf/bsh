@@ -1,9 +1,7 @@
 {
-  "rootDirectory": "nba_live/frontend",
   "buildCommand": "npm run build",
   "outputDirectory": ".output",
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
 }
-
