@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "chmod +x node_modules/.bin/nuxt && npm run build",
   "outputDirectory": ".output",
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
