@@ -9,7 +9,7 @@ import { ref, onMounted } from "vue";
 
 const gameIds = ref([]);
 const currentIndex = ref(0);
-const pages = ["http://localhost:3000", "http://localhost:3000/quarter-stats"];
+const pages = ["http://localhost:3000/playoff", "http://localhost:3000", "http://localhost:3000/quarter-stats"];
 const currentUrl = ref(pages[0]); // Починаємо з загальної статистики
 
 // ✅ Функція отримання ID матчів тільки для активних ігор
